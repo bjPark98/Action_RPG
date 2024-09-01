@@ -1,13 +1,16 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "{10181927-4A6D-7ECD-D4FC-4F81419A2D78}",
+	"EngineAssociation": "{12C1A011-4DE8-106A-9B79-FF8CE17D0060}",
 	"Category": "",
 	"Description": "",
 	"Modules": [
 		{
 			"Name": "RPG",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
 		}
 	],
 	"Plugins": [
