@@ -57,13 +57,13 @@ void AWarriorHeroCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
 	UWarriorInputComponent* WarriorInputComoponent = CastChecked<UWarriorInputComponent>(PlayerInputComponent);
 
 	WarriorInputComoponent->BindNativeInputAction(InputConfigDataAsset, WarriorGameplayTags::InputTag_Move, ETriggerEvent::Triggered,this, &ThisClass::Input_Move);
-	WarriorInputComoponent->BindNativeInputAction(InputConfigDataAsset, WarriorGameplayTags::InputTag_Move, ETriggerEvent::Triggered, this, &ThisClass::Input_Look);
+	WarriorInputComoponent->BindNativeInputAction(InputConfigDataAsset, WarriorGameplayTags::InputTag_Look, ETriggerEvent::Triggered, this, &ThisClass::Input_Look);
 }
 
 void AWarriorHeroCharacter::Input_Move(const FInputActionValue& InputActionValue)
 {
 	const FVector2D MovementVector = InputActionValue.Get<FVector2D>();
-	const FRotator MovementRotation(0.f, Controller->GetControlRotation(). Yaw, 0.f);
+	const FRotator MovementRotation(0.f, Controller->GetControlRotation().Yaw, 0.f);
 
 	if (MovementVector.Y != 0.f)
 	{
