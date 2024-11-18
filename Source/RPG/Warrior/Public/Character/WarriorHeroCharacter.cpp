@@ -23,7 +23,7 @@ AWarriorHeroCharacter::AWarriorHeroCharacter()
 	CameraBoom->SetupAttachment(GetRootComponent());
 	CameraBoom->TargetArmLength = 200.f;
 	CameraBoom->SocketOffset = FVector(0.f, 55.f, 65.f);
-	CameraBoom->bUsePawnControlRotation = true;
+	CameraBoom->bUsePawnControlRotation = false;
 
 	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
@@ -91,7 +91,7 @@ void AWarriorHeroCharacter::Input_Look(const FInputActionValue& InputActionValue
 
 	if (LookAxisVector.Y != 0.f)
 	{
-		AddControllerPitchInput(LookAxisVector.Y);
+		AddControllerPitchInput(-LookAxisVector.Y);
 	}
 	
 }
